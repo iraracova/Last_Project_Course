@@ -1,6 +1,7 @@
 import pytest
 from selenium import webdriver
 from .locators import MainPageLocators
+from .locators import LoginPageLocators
 from .base_page import BasePage
 
 
@@ -10,11 +11,10 @@ class LoginPage(BasePage):
         login_link.click()
 
     def should_be_login_url(self):
-        current_url = driver.current_url
-        assert True "login" in current_url, "login is presented in current url"
+        assert "login" in self.browser.current_url, "login is not presented in current url"
 
     def should_be_login_form(self):
-        assert True self.is_element_present(*LoginPageLocators.LOGIN_FORM), "login form is presented"
+        assert self.is_element_present(*LoginPageLocators.LOGIN_FORM), "login form is not presented"
 
     def should_be_register_form(self):
-        assert True self.is_element_present(*LoginPageLocators.REGISTER_FORM), "register form is presented"
+        assert self.is_element_present(*LoginPageLocators.REGISTER_FORM), "register form is not presented"

@@ -2,6 +2,7 @@ import pytest
 from selenium import webdriver
 from .locators import MainPageLocators
 from .base_page import BasePage
+from .login_page import LoginPage
 
 class MainPage(BasePage):
     def go_to_login_page(self):
