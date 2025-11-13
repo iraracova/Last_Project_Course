@@ -16,6 +16,7 @@ class ProductPage(BasePage):
 
     def checking_busket_value(self):
         field_message_adding = self.browser.find_element(*ProductPageLocators.FIELD_MESSAGE_ADDING)
-        message_adding = field_message_adding.text
+        basket_price = self.browser.find_element(*ProductPageLocators.BASKET_PRICE).text
         product_value = self.browser.find_element(*ProductPageLocators.PRODUCT_VALUE).text
-        assert f"Your basket total is now {product_value}" in message_adding, "The cart price does not match the product price"
+        assert f"Your basket total is now {product_value}" in basket_price, "The cart price does not match the product price"
+
