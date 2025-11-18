@@ -27,3 +27,4 @@ class ProductPage(BasePage):
     def success_massage_should_be_disappear(self):
         assert self.is_disappeared(*ProductPageLocators.FIELD_MESSAGE_ADDING), \
                "Success message is presents, but should not be"
+
